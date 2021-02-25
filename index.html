@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서보영 도서관</title>
+    <link rel="shortcut icon" href="/img/favicon/f01.png?" type="img/x-icon">
+    <link id= "favicon" rel="icon" href="#" type="img/x-icon">
+    <!--...-->
+
+    <script>
+      // favicon
+        var faviconRoute = '/img/favicon/';
+        var faviconNames = ['f01.png', 'f02.png', 'f03.png', 'f04.png', 'f05.png',
+                        'f06.png', 'f07.png', 'f08.png', 'f09.png', 'f10.png']; 
+                        // <!--파일이름은 짧게 변경했다-->
+    
+        var idx = 0;
+    
+        setInterval(func, 200);
+    
+        function func() {
+            document.querySelector("#favicon").setAttribute('href', faviconRoute + faviconNames[idx++]);
+            idx %= faviconNames.length;
+        }
+    </script>
+    <style>
+        
+        *{
+            margin:0;
+            padding : 0;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+
+/* 헤더안의 메뉴들 */
+#header{
+    width: 100%;
+    height: 40px;
+    background: rgb(235, 235, 235);
+}
+
+.basic_menu{
+    width: 70%;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.b-menu1{
+    float: left;    
+    width: 12%;
+}
+.b-menu1 li{
+    height: 33px;
+    border:1px solid #d3d3d3;
+    border-right: 0;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 18px;
+    color:#777
+}
+.b-menu2{    
+    width: 60%;
+    float: right;
+}
+.b-menu2 li{
+    float: right;
+    width: 20%;
+    height: 33px;
+    border:1px solid #d3d3d3;
+    border-right: 0;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 18px;
+    color:#777
+}
+.icon-sns{    
+    width: 14%;
+    float: right;
+}
+/* }
+    top:50%;
+    transform: translateY(-50%); */
+.icon-sns li{
+    float: right;
+}
+
+.menu{
+    width: 70%;
+    height: 70px;
+    padding-top: 5px;
+    margin: 0 auto;
+    background: #fff;
+}
+nav{
+    float: right;
+    right:10%
+}
+.menu li{
+    float: right;
+    margin:0 2% 0 8%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-top: 14px;
+    color:#888;
+}
+.logo{
+    float: left;
+    width: 20%;
+}
+
+
+
+/* 검색 */
+
+#searching{
+    width: 100%;
+    height: 70px;
+    background: #f6b712;
+}
+.searching_wrap{   
+    height: 70px;
+    width: 70%;
+    margin:0 auto;
+}
+.searching1{
+    height: 70px;
+    width: 48%;
+    float: left;
+    background: #f6b712;
+}
+.searching2{
+    text-align: center;
+    padding-top: 6px;
+    height: 64px;
+    width: 14%;
+    float: left;
+    background: #f19d09;
+}
+.attend_day{
+    padding-top: 15px;
+    height: 55px;
+    width: 38%;
+    float: left;
+    background: #ec8705;
+    text-align: center;
+}
+
+.attend_day ul{
+    width: 240px;
+    margin: 0 auto;
+    float: right;
+    padding-right: 40px;
+}
+.attend_day li{
+    margin: 0 0.4rem 0 0.4rem;
+    padding: 0.14rem;
+    float: left;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    color:#888;
+}
+
+
+
+
+/* 메인배너 */
+
+#main-banner{
+    width: 100%;
+    height: 600px;
+    background: #808080;
+}
+.main-banner_wrap{   
+    height: 28.5rem;
+    width: 50%;
+    margin:0 auto;
+    background: #a93838;
+    padding:6rem 10% 3rem 10%;
+}
+.main-banner_small{   
+    height: 400px;
+    width: 40%;
+    background: #a9a738;
+    margin-left: 66%;
+}
+
+
+
+/* 바로가기 아이콘 */
+
+#icons{
+    width: 100%;
+    height: 160px;
+    background: #eee;
+}
+.icons_wrap{   
+    height: 160px;
+    width: 70%;
+    margin:0 auto;
+}
+
+
+.icon_wrap{
+    width: 16%;
+    height: 160px;
+    margin: 0 0.33% 0 0.33%;
+    float: left;
+}
+
+
+.icon_wrap .icon_icon{
+    width: 100%;
+    padding-top: 15px;
+    height: 110px;
+    float: left;
+    background: #eee;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'ELAND_Nice_M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon_wrap .icon_text{
+    font-family: 'ELAND_Nice_M';
+    text-align: center;
+    color:#888;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+
+
+/* 행사 프로그램 신청 + 공지사항 */
+
+#programs{
+    width: 100%;
+    height: 480px;
+    background: #39530d;
+    padding-top:120px;    
+    padding-bottom:120px;
+}
+.programs_wrap{
+    height: 500px;
+    width: 70%;
+    margin:0 auto;
+    background: #ffe448;
+    
+}
+.programs_wrap .programs_notice{
+    height: 400px;
+    margin:50px 0% 50px 3%;
+    width: 47%;
+    background: #615d44;
+    float: left;
+}
+.programs_wrap .programs_app{
+    height: 400px;
+    margin:50px 3% 50px 0%;
+    width: 47%;
+    background: #614668;
+    float: left;
+}
+
+
+#recommende{
+    width: 100%;
+    height: 300px;
+    background: #ff53cc;
+    padding-top:80px;
+    padding-bottom:80px;
+}
+
+
+.recommende_wrap{
+    height: 300px;
+    width: 70%;
+    margin:0 auto;
+    background: #ffe448;
+}
+
+
+/* footer 푸터 */
+
+
+#footer{
+    width: 100%;
+    height: 174px;
+    background: #f7f7f7;
+    padding-top:20px;
+}
+
+
+.footer_wrap{
+    height: 110px;
+    width: 70%;
+    margin:0 auto;
+}
+
+.footer_legal{
+    width: 70%;
+    margin:0 auto;
+    border-top: 1px solid #ddd;
+    border-bottom:1px solid  #ddd;
+    line-height: 45px;
+}
+.footer_legal ul li{
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 2rem 0 0;
+    color:#666;
+}
+.footer_legal ul li:hover{
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 3.4rem 0 0;
+    color:#f6b712;
+}
+.footer_legal ul {
+margin-left:300px;
+}
+.footer_mid .footer_logo{
+    float: left;
+    padding-top: 15px;
+}
+.footer_mid .footer_info{
+    float: left;
+    margin-left:40px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color:#777;
+}
+
+.footer_copy{
+    clear:both;
+    margin-left:300px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color:#777;
+}
+
+
+
+    </style>
+</head>
+<body>
+<header>
+<div id="header">
+    <div class="basic_menu">
+        <div class="b-menu1">
+            <li style="border:1px solid #d3d3d3;border-right: 1;">홈으로</li>
+        </div>
+        <div class="icon-sns">
+            <li><img src="img/icon-youtube.png" width="40px"></li>
+            <li><img src="img/icon-nav.png" width="40px"></li>
+            <li><img src="img/icon-facebook.webp" width="40px"></li>
+            <li><img src="img/icon-insta.png" width="40px"></li>
+        </div>
+        <div class="b-menu2">
+                <li style="border:1px solid #d3d3d3;border-right: 1;">English</li>
+                <li>사이트맵</li>
+                <li>로그인</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+    <div class="menu">
+        <div class="logo"><a href="index.html"><img src="img/logo.png"></a>     </div>
+        <div class="nav">
+            <li><a href="#"><img src="img/333.svg" width="30px" style="
+                padding-top: 5px;"></a> </li>
+            <li><a href="#">도서관안내</a></li>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">자료검색</a></li>
+        </div>
+    </div>
+
+    <div id="searching">
+    <div class="searching_wrap">
+        <div class="searching1">
+
+        </div>
+        <div class="searching2">
+            <img src="img/search-1.png">
+            <img src="img/search-2.png">
+        </div>
+        <div class="attend_day">            
+            <img src="img/attand_month.png">
+            <ul>
+            <li>13</li>
+            <li>20</li>
+            <li>21</li>
+            <li>28</li>
+            </ul>
+        </div>
+    </div></div>
+</header>
+
+
+<div id="main-banner">
+
+    <div class="main-banner_wrap">
+        <div class="main-banner_small">
+
+        </div>
+
+    </div>
+</div>
+
+<div id="icons">
+
+    <div class="icons_wrap">
+        
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon1.png" width="100px">
+            </div>
+            <div class="icon_text">
+            도서관견학
+            </div>
+        </div>
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon2.png" height="100px" style="padding-top: 4px;">
+            </div>
+            <div class="icon_text">
+                방문예약
+            </div>
+        </div>
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon3.png" width="100px"  style="padding-top: 2px;">
+            </div>
+            <div class="icon_text">
+            도서관이야기
+            </div>
+        </div>
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon4.png" height="100px" style="padding-top: 4px;">
+            </div>
+            <div class="icon_text">
+            봉사활동
+            </div>
+        </div>
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon5.png" height="100px" style="padding-top: 4px;">
+            </div>
+            <div class="icon_text">
+            동화제작
+            </div>
+        </div>
+        <div class="icon_wrap">
+            <div class="icon_icon">
+                <img src="img/icon6.png" height="110px" style="padding-top: 4px;">
+            </div>
+            <div class="icon_text">
+            이용안내
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="programs">
+
+    <div class="programs_wrap">
+        <div class="programs_app">
+<div class="programs_app_title">
+프로그램 신청
+</div>
+<div class="programs_app_list">
+    
+</div>
+        </div>
+        <div class="programs_notice">
+
+        </div>
+    </div>
+</div>
+
+<div id="recommende">
+
+    <div class="recommende_wrap">
+        <div class="recommende_from">
+
+        </div>
+        <div class="recommende_books">
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <div id="footer">
+<div class="footer_legal">
+    <ul>
+                <li>개인정보방침</li>
+                <li>도서관관련법령</li>
+                <li>찾아오시는길</li>
+                <li>도서공동구매가이드</li>
+                <li>유관기관사이트</li>
+            </ul>
+            </div>
+        <div class="footer_wrap">
+            
+            <div class="footer_mid">
+    
+                <div class="footer_logo">
+                    <img src="img/logo-footer.png" style="padding-top: 4px;">
+                </div>
+                <div class="footer_info">
+                    <p>사업자등록 : 123-45-67778 | 사업자소재지 : 경기도 고양시 덕양구 그 어디쯤<br>
+                        전화번호 : 02-3413-4800 | 팩스번호 : 02-3413-4719<br>
+                        e-mail : suh.voyoung@gmail.com
+                    
+                    </p>
+                </div>
+            <div class="footer_copy">
+                <p>Copyright 2021. vozzang.com All pictures cannot be copied without permission. </p>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>

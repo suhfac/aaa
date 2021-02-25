@@ -1,0 +1,17 @@
+/* 서보영 도서관 메인페이지 css */
+
+#header{}
+
+.basic-manu{
+    width: 70%;
+    background: lightcoral;
+}
+
+.b-manu1 ul{
+    float: left;
+}
+.b-manu2 ul{
+    float: right;
+}
+
+
